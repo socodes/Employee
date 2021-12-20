@@ -6,7 +6,6 @@ import (
 	"math/rand"
 	"net/http"
 	"strconv"
-	"os"
 	"github.com/gorilla/mux"
 )
 
@@ -104,6 +103,6 @@ func main() {
 	r.HandleFunc("/employees/{id}", updateEmployee).Methods("PUT")
 	r.HandleFunc("/employees/{id}", deleteEmployee).Methods("DELETE")
 	// Start server
-	port := os.Getenv("PORT")
-	log.Fatal(http.ListenAndServe(":"+port, r))
+	
+	log.Fatal(http.ListenAndServe("localhost:8000", r))
 }
