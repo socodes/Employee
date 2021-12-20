@@ -103,7 +103,6 @@ func main() {
 	r.HandleFunc("/employees", createEmployee).Methods("POST")
 	r.HandleFunc("/employees/{id}", updateEmployee).Methods("PUT")
 	r.HandleFunc("/employees/{id}", deleteEmployee).Methods("DELETE")
-
 	// Start server
 	log.Fatal(http.ListenAndServe(":8000", r))
 }
