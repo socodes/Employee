@@ -105,5 +105,5 @@ func main() {
 	r.HandleFunc("/employees/{id}", deleteEmployee).Methods("DELETE")
 	// Start server
 	port := os.Getenv("PORT")
-	log.Fatal(http.ListenAndServe(":"+port, nil))
+	log.Fatal(http.ListenAndServe(":"+port, r))
 }
